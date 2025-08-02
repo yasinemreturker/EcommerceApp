@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">EcommerceApp</string>
+    <string name="app_name">E-Market</string>
+
+    // Bottom Navigation Menu
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="favorite">Favorite</string>
+    <string name="profile">Profile</string>
+
+    // Search
+    <string name="search_for_product">Search<font size="11" /></string>
+
+    // Home Screen
+    <string name="filter">Filters:</string>
+    <string name="select_filter">Select Filter</string>
+    <string name="product">Product</string>
+    <string name="add_to_cart">Add to Cart</string>
+
 </resources>
