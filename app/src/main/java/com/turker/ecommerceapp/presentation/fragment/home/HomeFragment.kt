@@ -3,17 +3,20 @@ package com.turker.ecommerceapp.presentation.fragment.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.turker.ecommerceapp.R
 import com.turker.ecommerceapp.data.model.ProductUI
 import com.turker.ecommerceapp.databinding.FragmentHomeBinding
 import com.turker.ecommerceapp.presentation.adapter.ProductsAdapter
 import com.turker.ecommerceapp.util.viewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home), ProductsAdapter.ProductListener {
 
     private val binding by viewBinding(FragmentHomeBinding::bind)
     private val productsAdapter by lazy { ProductsAdapter(this) }
-    //private val viewModel by viewModels<HomeViewModel>()
+    private val viewModel by viewModels<HomeViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
