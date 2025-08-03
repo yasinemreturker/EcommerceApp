@@ -1,4 +1,5 @@
 <resources>
+    // App
     <string name="app_name">E-Market</string>
 
     // Bottom Navigation Menu
@@ -15,5 +16,20 @@
     <string name="select_filter">Select Filter</string>
     <string name="product">Product</string>
     <string name="add_to_cart">Add to Cart</string>
+
+    // Detail Screen
+    <string name="price">Price:</string>
+
+    // Cart Screen
+    <string name="cart_product_count">1</string>
+    <string name="cart_product_count_minus">-</string>
+    <string name="cart_product_count_plus">+</string>
+    <string name="cart_complete">Complete</string>
+
+    // Favorite Screen
+    <string name="favorites">Favoriler</string>
+
+    // Lorem
+    <string name="lorem_medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales nibh pretium ipsum faucibus, a commodo tortor blandit. Duis pellentesque, purus sed gravida sagittis, tortor urna eleifend ante, a volutpat ex est vel ipsum. Etiam in auctor nisi. Donec in mattis enim, in bibendum lorem. Nam vitae semper quam.</string>
 
 </resources>

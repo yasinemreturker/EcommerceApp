@@ -37,6 +37,7 @@
 
         <TextView
             android:id="@+id/tvProductPrice"
+            style="@style/textViewMontserratRegular"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -47,11 +48,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivProduct"
-            tools:text="15.000 TL" />
+            tools:text="15.000₺" />
 
 
         <TextView
             android:id="@+id/tvProductTitle"
+            style="@style/textViewMontserratRegular"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -67,6 +69,7 @@
 
         <Button
             android:id="@+id/buttonAddToCart"
+            style="@style/textViewMontserratRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -80,6 +83,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.cardview.widget.CardView>

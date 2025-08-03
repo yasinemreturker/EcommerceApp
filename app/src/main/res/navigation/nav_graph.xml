@@ -8,28 +8,48 @@
     <!-- Home Fragment -->
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.turker.ecommerceapp.presentation.fragment.HomeFragment"
+        android:name="com.turker.ecommerceapp.presentation.fragment.home.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 
-    <!-- Profile Fragment -->
+    <!-- Cart Fragment -->
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.turker.ecommerceapp.presentation.fragment.CartFragment"
+        android:name="com.turker.ecommerceapp.presentation.fragment.cart.CartFragment"
         android:label="Cart"
         tools:layout="@layout/fragment_cart" />
 
-    <!-- Settings Fragment -->
+    <!-- Favorite Fragment -->
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.turker.ecommerceapp.presentation.fragment.FavoriteFragment"
+        android:name="com.turker.ecommerceapp.presentation.fragment.favorite.FavoriteFragment"
         android:label="Favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 
-    <!-- Notifications Fragment -->
+    <!-- Profile Fragment -->
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.turker.ecommerceapp.presentation.fragment.ProfileFragment"
+        android:name="com.turker.ecommerceapp.presentation.fragment.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
+    <!-- Detail Fragment -->
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.turker.ecommerceapp.presentation.fragment.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>

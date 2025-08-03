@@ -29,9 +29,9 @@ class ProductsAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product: ProductUI) = with(binding) {
-            tvProductPrice.text = product.price.toString()
-            tvProductTitle.text = product.title
-            ivProduct.loadImage(product.imageOne)
+            tvProductPrice.text = product.price
+            tvProductTitle.text = product.name
+            ivProduct.loadImage(product.image)
 
             var isFavorite = product.isFavorite
 
@@ -72,8 +72,8 @@ class ProductsAdapter(
     }
 
     interface ProductListener {
-        fun onProductClick(id: Int)
-        fun onAddToCartButtonClick(id: Int)
+        fun onProductClick(id: String?)
+        fun onAddToCartButtonClick(id: String?)
         fun onFavoriteButtonClick(product: ProductUI)
     }
 

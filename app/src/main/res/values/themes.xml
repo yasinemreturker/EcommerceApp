@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.EcommerceApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar" />
+    <style name="Base.Theme.EcommerceApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar" />
+
+    <style name="Theme.EcommerceApp" parent="Base.Theme.EcommerceApp">
+        <!-- Status bar color. -->
+        <item name="android:actionBarTheme">@color/black</item>
+    </style>
+
+    <style name="textViewMontserratRegular">
+        <item name="android:textSize">16dp</item>
+        <item name="fontFamily">montserrat_regular</item>
+        <item name="color">@color/ultramarine_blue</item>
+    </style>
+
+    <style name="buttonRegular">
+        <item name="background">@color/ultramarine_blue</item>
+    </style>
+
 </resources>
