@@ -13,4 +13,13 @@ object Constants {
         const val SEARCH_PRODUCT = "search_product"
     }
 
+    object StringConstant {
+        const val EMPTY_STRING = ""
+    }
+
+    object NumberConstant {
+        const val ZERO = 0
+        const val ONE = 1
+        const val DOUBLE_ZERO = 0.0
+    }
 }

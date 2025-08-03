@@ -1,7 +1,7 @@
 package com.turker.ecommerceapp.data.datasource.remote
 
+import com.turker.ecommerceapp.data.model.Product
 import com.turker.ecommerceapp.data.model.response.CRUDResponse
-import com.turker.ecommerceapp.data.model.response.GetProductResponse
 import com.turker.ecommerceapp.util.Constants.Endpoint.ADD_TO_CART
 import com.turker.ecommerceapp.util.Constants.Endpoint.CLEAR_CART
 import com.turker.ecommerceapp.util.Constants.Endpoint.DELETE_FROM_CART
@@ -19,7 +19,7 @@ import retrofit2.http.Query
 interface ProductService {
 
     @GET(GET_ALL_PRODUCTS)
-    suspend fun getAllProducts(): GetProductResponse
+    suspend fun getAllProducts(): List<Product>
 
 //    @GET(GET_PRODUCT_DETAIL)
 //    suspend fun getProductDetail(
