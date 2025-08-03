@@ -12,7 +12,9 @@ import androidx.navigation.fragment.navArgs
 import com.turker.ecommerceapp.R
 import com.turker.ecommerceapp.databinding.FragmentDetailBinding
 import com.turker.ecommerceapp.presentation.fragment.home.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailFragment : Fragment(R.layout.fragment_detail ) {
 
     private lateinit var binding: FragmentDetailBinding
