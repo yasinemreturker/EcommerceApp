@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="25dp"
+    android:elevation="10dp">
+
+    <TextView
+        android:id="@+id/tvCartProductTitle"
+        style="@style/textViewMontserratRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/clCartCountContent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage"
+        tools:text="Samsung s22" />
+
+    <TextView
+        android:id="@+id/tvCartProductPrice"
+        style="@style/textViewMontserratRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/ultramarine_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvCartProductTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvCartProductTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvCartProductTitle"
+        tools:text="12.000₺" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCartCountContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCartProductTitle"
+        app:layout_constraintTop_toTopOf="@id/tvCartProductTitle">
+
+        <TextView
+            android:id="@+id/buttonCountMinus"
+            style="@style/textViewMontserratRegular"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_count_left"
+            android:gravity="center"
+            android:text="@string/cart_product_count_minus"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCartProductCount"
+            style="@style/textViewMontserratRegular"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:background="@color/ultramarine_blue"
+            android:gravity="center"
+            android:text="@string/cart_product_count"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/buttonCountPlus"
+            app:layout_constraintStart_toEndOf="@id/buttonCountMinus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/buttonCountPlus"
+            style="@style/textViewMontserratRegular"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_count_right"
+            android:gravity="center"
+            android:text="@string/cart_product_count_plus"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+

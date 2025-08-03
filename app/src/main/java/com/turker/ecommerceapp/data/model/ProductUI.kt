@@ -1,17 +1,13 @@
 package com.turker.ecommerceapp.data.model
 
 data class ProductUI(
-    val category: String,
-    val count: Int,
-    val description: String,
-    val id: Int,
-    val imageOne: String,
-    val imageThree: String,
-    val imageTwo: String,
-    val price: Double,
-    val rate: Double,
-    val salePrice: Double,
-    val saleState: Boolean,
-    val title: String,
+    val createdAt: String?,
+    val name: String?,
+    val image: String?,
+    val price: String?,
+    val description: String?,
+    val model: String?,
+    val brand: String?,
+    val id: String?,
     val isFavorite: Boolean
 )

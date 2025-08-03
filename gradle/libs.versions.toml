@@ -23,7 +23,7 @@ materialVersion = "1.6.1"
 navigation = "2.7.0"
 navigationSafeargs = "2.5.2"
 hilt = "2.47"
-hiltPlugin = "2.44"
+hiltPlugin = "1.0.0"
 
 [libraries]
 # Android
@@ -78,6 +78,11 @@ preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = 
 # Navigation
 navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
 navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+
+# Hilt
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-fragment", version.ref = "hiltPlugin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
