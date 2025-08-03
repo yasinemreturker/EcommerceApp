@@ -29,6 +29,9 @@
     // Favorite Screen
     <string name="favorites">Favoriler</string>
 
+    // Search
+    <string name="product_not_found">Ürün bulunamadı!</string>
+
     // Lorem
     <string name="lorem_medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales nibh pretium ipsum faucibus, a commodo tortor blandit. Duis pellentesque, purus sed gravida sagittis, tortor urna eleifend ante, a volutpat ex est vel ipsum. Etiam in auctor nisi. Donec in mattis enim, in bibendum lorem. Nam vitae semper quam.</string>
 

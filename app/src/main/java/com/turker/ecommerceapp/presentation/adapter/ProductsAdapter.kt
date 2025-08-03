@@ -14,18 +14,32 @@ class ProductsAdapter(
     private val productListener: ProductListener
 ) : ListAdapter<ProductUI, ProductsAdapter.ProductViewHolder>(ProductDiffCallBack()) {
 
+    private var matchedProduct: List<ProductUI> = arrayListOf()
+    private var isSearchOnPressed: Boolean = false
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder =
         ProductViewHolder(
             ProductItemBinding.inflate(LayoutInflater.from(parent.context), parent, false),
-            productListener
+            productListener, matchedProduct
         )
 
-    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) =
-        holder.bind(getItem(position))
+    override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+        if (isSearchOnPressed && !matchedProduct.isNullOrEmpty()) {
+            holder.bind(matchedProduct.get(position))
+        } else {
+            holder.bind(getItem(position))
+        }
+    }
+
+    fun submitSearchList(matchedProduct: List<ProductUI>) {
+        this.matchedProduct = matchedProduct
+        isSearchOnPressed = true
+    }
 
     class ProductViewHolder(
         private val binding: ProductItemBinding,
-        private val productListener: ProductListener
+        private val productListener: ProductListener,
+        private val matchedProduct: List<ProductUI>
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product: ProductUI) = with(binding) {
