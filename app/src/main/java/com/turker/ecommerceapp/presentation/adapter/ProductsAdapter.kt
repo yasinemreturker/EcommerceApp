@@ -43,7 +43,7 @@ class ProductsAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product: ProductUI) = with(binding) {
-            tvProductPrice.text = product.price
+            tvProductPrice.text = product.price.plus(binding.root.context.getString(R.string.turkish_lira_symbol))
             tvProductTitle.text = product.name
             ivProduct.loadImage(product.image)
 

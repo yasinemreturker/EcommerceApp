@@ -7,7 +7,7 @@ import com.turker.ecommerceapp.data.model.ProductUI
 import com.turker.ecommerceapp.data.model.response.CRUDResponse
 import com.turker.ecommerceapp.util.Resource
 
-class ProductRepository(
+open class ProductRepository(
     private val productService: ProductService,
     private val productDao: ProductDao
 ) {
