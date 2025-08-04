@@ -3,6 +3,8 @@ package com.turker.ecommerceapp.presentation.fragment.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.turker.ecommerceapp.data.model.ProductUI
 import com.turker.ecommerceapp.data.repo.ProductRepository
 import com.turker.ecommerceapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -38,6 +40,18 @@ class HomeViewModel @Inject constructor(private val productRepository: ProductRe
     fun getFavoriteProducts() {
         CoroutineScope(Dispatchers.IO).launch {
             productRepository.getFavoriteProducts()
+        }
+    }
+
+    fun removeFromFavorite(product: ProductUI) {
+        CoroutineScope(Dispatchers.IO).launch {
+            productRepository.removeFromFavorites(product)
+        }
+    }
+
+    fun addToFavorite(product: ProductUI) {
+        CoroutineScope(Dispatchers.IO).launch {
+            productRepository.addToFavorites(product)
         }
     }
 

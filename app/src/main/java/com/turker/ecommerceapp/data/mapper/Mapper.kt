@@ -32,3 +32,16 @@ fun ProductEntity.mapToProductUI() : ProductUI {
         isFavorite = true
     )
 }
+
+fun ProductUI.mapToProductEntity(): ProductEntity {
+    return ProductEntity(
+        id = id?.toInt(),
+        createdAt = createdAt.orEmpty(),
+        name = name.orEmpty(),
+        image = image.orEmpty(),
+        price = price.orEmpty(),
+        description = description.orEmpty(),
+        model = model.orEmpty(),
+        brand = brand.orEmpty()
+    )
+}

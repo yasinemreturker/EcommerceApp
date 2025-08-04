@@ -1,5 +1,9 @@
 package com.turker.ecommerceapp.data.model
 
+import kotlinx.parcelize.Parcelize
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class ProductUI(
     val createdAt: String?,
     val name: String?,
