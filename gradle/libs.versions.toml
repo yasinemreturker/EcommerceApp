@@ -27,6 +27,8 @@ hiltPlugin = "1.0.0"
 mockito = "5.11.0"
 mockitoKotlin = "5.2.1"
 arch = "2.2.0"
+paging = "3.2.1"
+pagingViewmodel = "2.8.1"
 
 [libraries]
 # Android
@@ -91,6 +93,12 @@ navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref 
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-fragment", version.ref = "hiltPlugin" }
+
+# Paging
+paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
+paging-common = { module = "androidx.paging:paging-common-ktx", version.ref = "paging" }
+paging-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "pagingViewmodel" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

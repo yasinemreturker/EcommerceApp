@@ -24,7 +24,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), ProductsAdapter.ProductLi
 
     private var matchedProduct: List<ProductUI> = arrayListOf()
     private var products : List<ProductUI> = arrayListOf()
-
+    private val filterBottomSheet = FilterBottomSheetFragment()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,6 +32,21 @@ class HomeFragment : Fragment(R.layout.fragment_home), ProductsAdapter.ProductLi
         buttonController()
         getData()
         observeData()
+        observeFilterResults()
+    }
+
+    private fun observeFilterResults() {
+        parentFragmentManager.setFragmentResultListener(
+            "filterResult",
+            viewLifecycleOwner
+        ) { _, bundle ->
+            val selectedBrands = bundle.getStringArrayList("selectedBrands")
+            val selectedModels = bundle.getStringArrayList("selectedModels")
+            val sortOption = bundle.getString("sortOption")
+
+            // Şimdi bu değerleri kullanarak API sorgusu yapabilir ya da listeyi filtreleyebilirsin
+            Toast.makeText(requireContext(), "Sort: $sortOption", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getData() {
@@ -51,6 +66,14 @@ class HomeFragment : Fragment(R.layout.fragment_home), ProductsAdapter.ProductLi
                 return true
             }
         })
+
+        binding.buttonFilter.setOnClickListener(){
+            showFilterBottomSheet()
+        }
+    }
+
+    private fun showFilterBottomSheet() {
+        filterBottomSheet.show(parentFragmentManager, filterBottomSheet.tag)
     }
 
     fun search(text: String?) {
