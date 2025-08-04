@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import com.turker.ecommerceapp.R
 import com.turker.ecommerceapp.data.model.ProductUI
 import com.turker.ecommerceapp.databinding.FragmentHomeBinding
-import com.turker.ecommerceapp.presentation.adapter.ProductsAdapter
 import com.turker.ecommerceapp.util.invisible
 import com.turker.ecommerceapp.util.viewBinding
 import com.turker.ecommerceapp.util.visible
@@ -129,20 +128,20 @@ class HomeFragment : Fragment(R.layout.fragment_home), ProductsAdapter.ProductLi
         findNavController().navigate(direction)
     }
 
-    override fun onAddToCartButtonClick(id: String?) {
-//        val addToCartRequest = AddToCartRequest(viewModelFirebase.currentUser!!.uid, id)
-//        viewModel.addToCart(addToCartRequest)
+    override fun onAddToCartButtonClick(cartList: MutableList<ProductUI>) {
+//        val arrayList = ArrayList(cartList)
+//        val direction = HomeFragmentDirections.actionHomeFragmentToCartFragment(arrayList)
+//        findNavController().navigate(direction)
     }
 
     override fun onFavoriteButtonClick(product: ProductUI) {
-//        if (product.isFavorite) {
-//            viewModel.removeFromFavorite(product)
-//        } else {
-//            viewModel.addToFavorite(product)
-//        }
-//
-//        viewModel.getAllProducts()
-//        viewModel.getSaleProducts()
+        if (product.isFavorite) {
+            viewModel.removeFromFavorite(product)
+        } else {
+            viewModel.addToFavorite(product)
+        }
+
+        viewModel.getAllProducts()
     }
 
 }

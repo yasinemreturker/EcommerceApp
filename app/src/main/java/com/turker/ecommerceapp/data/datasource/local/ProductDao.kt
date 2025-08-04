@@ -14,6 +14,9 @@ interface ProductDao {
     @Query("SELECT * FROM favproducts")
     fun getFavoriteProducts(): List<ProductEntity>
 
+//    @Query("SELECT id FROM favproducts")
+//    fun getCartProducts(id: String?): List<ProductEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addToFavorites(product: ProductEntity)
 
@@ -25,5 +28,8 @@ interface ProductDao {
 
     @Query("SELECT id FROM favproducts")
     fun getProduct(): Product
+
+//    @Query("DELETE FROM favproducts WHERE id")
+//    fun clearCart(id: Int): Any
 
 }

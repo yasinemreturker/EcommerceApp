@@ -21,7 +21,8 @@
         android:id="@+id/cartFragment"
         android:name="com.turker.ecommerceapp.presentation.fragment.cart.CartFragment"
         android:label="Cart"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart" >
+    </fragment>
 
     <!-- Favorite Fragment -->
     <fragment

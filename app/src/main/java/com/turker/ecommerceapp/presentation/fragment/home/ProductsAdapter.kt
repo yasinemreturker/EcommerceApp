@@ -1,4 +1,4 @@
-package com.turker.ecommerceapp.presentation.adapter
+package com.turker.ecommerceapp.presentation.fragment.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -16,11 +16,12 @@ class ProductsAdapter(
 
     private var matchedProduct: List<ProductUI> = arrayListOf()
     private var isSearchOnPressed: Boolean = false
+    private var cartList: MutableList<ProductUI> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder =
         ProductViewHolder(
             ProductItemBinding.inflate(LayoutInflater.from(parent.context), parent, false),
-            productListener, matchedProduct
+            productListener, matchedProduct, cartList
         )
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
@@ -39,7 +40,8 @@ class ProductsAdapter(
     class ProductViewHolder(
         private val binding: ProductItemBinding,
         private val productListener: ProductListener,
-        private val matchedProduct: List<ProductUI>
+        private val matchedProduct: List<ProductUI>,
+        private val cartList: MutableList<ProductUI>
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product: ProductUI) = with(binding) {
@@ -65,7 +67,8 @@ class ProductsAdapter(
             }
 
             buttonAddToCart.setOnClickListener {
-                productListener.onAddToCartButtonClick(product.id)
+                cartList.add(product)
+                productListener.onAddToCartButtonClick(cartList)
             }
 
             ivFavorite.setOnClickListener {
@@ -101,7 +104,7 @@ class ProductsAdapter(
             price: String?
         )
 
-        fun onAddToCartButtonClick(id: String?)
+        fun onAddToCartButtonClick(cartList: MutableList<ProductUI>)
         fun onFavoriteButtonClick(product: ProductUI)
     }
 

@@ -37,21 +37,20 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         super.onViewCreated(view, savedInstanceState)
 
         initView()
-
-        // Ek olarak remote veya local içinde viewModel yolu izlenebilir.
-        //viewModel.getProductDetail(args.id)
+        buttonController()
+        //viewModel.getProductDetail(args.id)  // Ek olarak remote veya local içinde viewModel yolu izlenebilir.
         observeData()
+    }
 
-        with(binding) {
-            btnAddToCart.setOnClickListener {
-                viewModelHome.homeState.observe(viewLifecycleOwner) { state ->
-                    if (state is HomeState.PostResponse) {
-                        Toast.makeText(
-                            requireContext(),
-                            state.crud.message,
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+    private fun buttonController() {
+        binding.btnAddToCart.setOnClickListener {
+            viewModelHome.homeState.observe(viewLifecycleOwner) { state ->
+                if (state is HomeState.PostResponse) {
+                    Toast.makeText(
+                        requireContext(),
+                        state.crud.message,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }
