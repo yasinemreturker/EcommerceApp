@@ -16,6 +16,7 @@
     <string name="select_filter">Select Filter</string>
     <string name="product">Product</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="turkish_lira_symbol">" ₺"</string>
 
     // Detail Screen
     <string name="price">Price:</string>

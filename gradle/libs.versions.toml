@@ -24,6 +24,9 @@ navigation = "2.7.0"
 navigationSafeargs = "2.5.2"
 hilt = "2.47"
 hiltPlugin = "1.0.0"
+mockito = "5.11.0"
+mockitoKotlin = "5.2.1"
+arch = "2.2.0"
 
 [libraries]
 # Android
@@ -47,6 +50,11 @@ androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+arch-core = { module = "androidx.arch.core:core-testing", version.ref = "arch" }
+
 
 # Network
 retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
