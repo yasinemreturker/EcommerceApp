@@ -6,8 +6,8 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.turker.ecommerceapp.R
-import com.turker.ecommerceapp.data.model.Product
 import com.turker.ecommerceapp.data.model.ProductUI
 import com.turker.ecommerceapp.databinding.FragmentHomeBinding
 import com.turker.ecommerceapp.presentation.adapter.ProductsAdapter
@@ -15,7 +15,6 @@ import com.turker.ecommerceapp.util.invisible
 import com.turker.ecommerceapp.util.viewBinding
 import com.turker.ecommerceapp.util.visible
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home), ProductsAdapter.ProductListener {
@@ -38,7 +37,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), ProductsAdapter.ProductLi
 
     private fun getData() {
         viewModel.getAllProducts()
-        //viewModel.getFavoriteProducts()
+        viewModel.getFavoriteProducts()
     }
 
     private fun buttonController() {
@@ -119,9 +118,15 @@ class HomeFragment : Fragment(R.layout.fragment_home), ProductsAdapter.ProductLi
         }
     }
 
-    override fun onProductClick(id: String?) {
-//        val direction = HomeFragmentDirections.homeToDetail(id)
-//        findNavController().navigate(direction)
+    override fun onProductClick(
+        id: String?,
+        image: String?,
+        name: String?,
+        description: String?,
+        price: String?
+    ) {
+        val direction = HomeFragmentDirections.actionHomeFragmentToDetailFragment(id, image, name, price, description)
+        findNavController().navigate(direction)
     }
 
     override fun onAddToCartButtonClick(id: String?) {

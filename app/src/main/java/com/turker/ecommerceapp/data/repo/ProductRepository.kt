@@ -4,26 +4,12 @@ import com.turker.ecommerceapp.data.datasource.local.ProductDao
 import com.turker.ecommerceapp.data.datasource.remote.ProductService
 import com.turker.ecommerceapp.data.mapper.mapToProductUI
 import com.turker.ecommerceapp.data.model.ProductUI
-import com.turker.ecommerceapp.data.model.response.CRUDResponse
 import com.turker.ecommerceapp.util.Resource
 
 open class ProductRepository(
     private val productService: ProductService,
     private val productDao: ProductDao
 ) {
-
-//    suspend fun getProductDetail(id: Int): Resource<ProductUI> {
-//        return try {
-//
-//            val getFavoriteIds = getFavoriteIds()
-//            val result = productService.getProductDetail(id).product
-//            result.let {
-//                Resource.Success(it.mapToProductUI(isFavorite = getFavoriteIds.contains(it.id)))
-//            }
-//        } catch (e: Exception) {
-//            Resource.Error(e)
-//        }
-//    }
 
     suspend fun getAllProducts(): Resource<List<ProductUI>> {
         return try {
@@ -42,6 +28,36 @@ open class ProductRepository(
             Resource.Error(e)
         }
     }
+
+    private suspend fun getFavoriteIds() = productDao.getFavoriteIds()
+
+    suspend fun getProductById(id: Int) = productDao.getProduct()
+
+    suspend fun getFavoriteProducts(): Resource<List<ProductUI>> {
+        return try {
+            val result = productDao.getFavoriteProducts().map { it.mapToProductUI() }
+            if (result.isEmpty()) {
+                Resource.Error(Exception("There are no products here!"))
+            } else {
+                Resource.Success(result)
+            }
+        } catch (e: Exception) {
+            Resource.Error(e)
+        }
+    }
+
+//    suspend fun getProductDetail(id: Int): Resource<ProductUI> {
+//        return try {
+//
+//            val getFavoriteIds = getFavoriteIds()
+//            val result = productService.getProductDetail(id).product
+//            result.let {
+//                Resource.Success(it.mapToProductUI(isFavorite = getFavoriteIds.contains(it.id)))
+//            }
+//        } catch (e: Exception) {
+//            Resource.Error(e)
+//        }
+//    }
 
 //    suspend fun getSearchProducts(query: String): Resource<List<ProductUI>> {
 //        return try {
@@ -139,7 +155,4 @@ open class ProductRepository(
 //            Resource.Error(e)
 //        }
 //    }
-
-    private suspend fun getFavoriteIds() = productDao.getFavoriteIds()
-
 }
