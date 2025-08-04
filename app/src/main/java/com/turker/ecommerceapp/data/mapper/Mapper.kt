@@ -1,6 +1,7 @@
 package com.turker.ecommerceapp.data.mapper
 
 import com.turker.ecommerceapp.data.model.Product
+import com.turker.ecommerceapp.data.model.ProductEntity
 import com.turker.ecommerceapp.data.model.ProductUI
 import com.turker.ecommerceapp.util.Constants.StringConstant.EMPTY_STRING
 
@@ -15,5 +16,19 @@ fun Product.mapToProductUI(isFavorite: Boolean): ProductUI {
         id = this.id ?: EMPTY_STRING,
         price = this.price ?: EMPTY_STRING,
         isFavorite = isFavorite
+    )
+}
+
+fun ProductEntity.mapToProductUI() : ProductUI {
+    return ProductUI(
+        id = (id ?: 1).toString(),
+        createdAt = createdAt.orEmpty(),
+        name = name.orEmpty(),
+        image = image.orEmpty(),
+        price = price.orEmpty(),
+        description = description.orEmpty(),
+        model = model.orEmpty(),
+        brand = brand.orEmpty(),
+        isFavorite = true
     )
 }

@@ -12,7 +12,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val productRepository: ProductRepository) : ViewModel() {
+class HomeViewModel @Inject constructor(private val productRepository: ProductRepository) :
+    ViewModel() {
 
     private var _homeState = MutableLiveData<HomeState>()
     val homeState: LiveData<HomeState>
@@ -31,6 +32,12 @@ class HomeViewModel @Inject constructor(private val productRepository: ProductRe
                 _homeState.postValue(HomeState.Error(result.throwable))
             }
 
+        }
+    }
+
+    fun getFavoriteProducts() {
+        CoroutineScope(Dispatchers.IO).launch {
+            productRepository.getFavoriteProducts()
         }
     }
 

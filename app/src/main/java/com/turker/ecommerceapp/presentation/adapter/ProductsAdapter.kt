@@ -43,7 +43,8 @@ class ProductsAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product: ProductUI) = with(binding) {
-            tvProductPrice.text = product.price.plus(binding.root.context.getString(R.string.turkish_lira_symbol))
+            tvProductPrice.text =
+                product.price.plus(binding.root.context.getString(R.string.turkish_lira_symbol))
             tvProductTitle.text = product.name
             ivProduct.loadImage(product.image)
 
@@ -53,8 +54,14 @@ class ProductsAdapter(
                 ivFavorite.setImageResource(R.drawable.ic_favorite_enable)
             }
 
-            ivProduct.setOnClickListener {
-                productListener.onProductClick(product.id)
+            cvProductItem.setOnClickListener {
+                productListener.onProductClick(
+                    product.id,
+                    product.image,
+                    product.name,
+                    product.description,
+                    product.price
+                )
             }
 
             buttonAddToCart.setOnClickListener {
@@ -86,7 +93,14 @@ class ProductsAdapter(
     }
 
     interface ProductListener {
-        fun onProductClick(id: String?)
+        fun onProductClick(
+            id: String?,
+            image: String?,
+            name: String?,
+            description: String?,
+            price: String?
+        )
+
         fun onAddToCartButtonClick(id: String?)
         fun onFavoriteButtonClick(product: ProductUI)
     }

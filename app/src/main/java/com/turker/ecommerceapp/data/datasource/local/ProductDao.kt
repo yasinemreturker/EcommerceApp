@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.turker.ecommerceapp.data.model.Product
 import com.turker.ecommerceapp.data.model.ProductEntity
 
 @Dao
@@ -21,5 +22,8 @@ interface ProductDao {
 
     @Query("SELECT id FROM favproducts")
     fun getFavoriteIds(): List<Int>
+
+    @Query("SELECT id FROM favproducts")
+    fun getProduct(): Product
 
 }

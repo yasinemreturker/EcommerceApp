@@ -11,36 +11,24 @@ data class ProductEntity(
     @ColumnInfo(name = "id")
     val id: Int?,
 
-    @ColumnInfo(name = "category")
-    val category: String?,
+    @ColumnInfo(name = "createdAt")
+    val createdAt: String?,
 
     @ColumnInfo(name = "count")
-    val count: Int?,
+    val name: String?,
 
     @ColumnInfo(name = "description")
-    val description: String?,
+    val image: String?,
 
     @ColumnInfo(name = "imageOne")
-    val imageOne: String?,
+    val price: String?,
 
     @ColumnInfo(name = "imageThree")
-    val imageThree: String?,
+    val description: String?,
 
     @ColumnInfo(name = "imageTwo")
-    val imageTwo: String?,
+    val model: String?,
 
     @ColumnInfo(name = "price")
-    val price: Double?,
-
-    @ColumnInfo(name = "rate")
-    val rate: Double?,
-
-    @ColumnInfo(name = "salePrice")
-    val salePrice: Double?,
-
-    @ColumnInfo(name = "saleState")
-    val saleState: Boolean?,
-
-    @ColumnInfo(name = "title")
-    val title: String?
+    val brand: String?
 )
