@@ -121,6 +121,11 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation)
     kapt(libs.hilt.compiler)
+
+    // Paging
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.common)
+    implementation(libs.paging.viewmodel)
 }
 
 // Allow references to generated code

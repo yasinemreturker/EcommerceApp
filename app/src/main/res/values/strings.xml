@@ -33,6 +33,17 @@
     // Search
     <string name="product_not_found">Ürün bulunamadı!</string>
 
+    // Filter Bottom Sheet
+    <string name="primary">Primary</string>
+    <string name="search">Search</string>
+    <string name="model">Model</string>
+    <string name="sort_by">Sort By</string>
+    <string name="old_to_new">Old to new</string>
+    <string name="new_to_old">New to old</string>
+    <string name="price_high_to_low">Price high to low</string>
+    <string name="price_low_to_high">Price low to high</string>
+    <string name="brand">Brand</string>
+
     // Lorem
     <string name="lorem_medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales nibh pretium ipsum faucibus, a commodo tortor blandit. Duis pellentesque, purus sed gravida sagittis, tortor urna eleifend ante, a volutpat ex est vel ipsum. Etiam in auctor nisi. Donec in mattis enim, in bibendum lorem. Nam vitae semper quam.</string>
 
